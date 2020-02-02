@@ -1,0 +1,139 @@
+<!--pages/home/home.wxml-->
+<!-----导航区域start----->
+<view id="header">
+  <!-----搜索框start----->
+  <navigator url="../search/search">
+    <view class="search  pull-left" >
+      <image src="../image/search.png" style="width:42rpx;height:44rpx"></image>
+    </view>
+  </navigator>
+  <!-----搜索框end----->
+
+  <!-----频道start----->
+  <scroll-view  scroll-x class="channels  pull-left"
+  scroll-into-view="{{activechannel}}"
+  scroll-with-animation="true"
+  
+  >
+
+
+    <view 
+    id="{{item.id}}"
+    bindtap="clickchangechannel"
+    data-id="{{item.id}}"
+    data-index="{{index}}"
+    class="{{item.id==activechannel? 'active':''}} "  wx:for="{{channels}}" > {{item.name}}</view>
+    
+  </scroll-view>
+
+  <!----频道end------>
+
+  <!----加号start----->
+  <view class="plus  pull-left" bindtap="showpindao">
+   <image src="../image/add.png" style="width:42rpx;height:44rpx"></image>
+  </view>
+  <!----加号end------>
+
+  <!----用户start------>
+<navigator url="../user/user">
+  <view class="user   pull-left">
+    <image src="../image/user2.png" style="width:42rpx;height:44rpx"></image>
+  </view>
+  <!----用户end------>
+</navigator> 
+
+
+
+</view>
+
+<!----导航区域end------>
+
+
+
+<!----内容区域start------>
+<view id="content" class="" style="height:{{height}}px">
+  <swiper current-item-id="{{activechannel}}"  
+  bindchange="swiperchangechannel"
+  >
+    <swiper-item wx:for="{{channels}}" data-index="{{index}}"  class="" wx:for-item="pindao" item-id="{{pindao.id}}">
+      <scroll-view scroll-y class="news-list">
+        
+          <view wx:for="{{pindao.data}}"  class="item " >
+        <!---标题start--->
+        <navigator url="../detail/detail?id={{item.id}}">
+            <view class="title"> {{item.title}}</view>
+        
+        <!---标题end--->
+
+        <!---媒体start--->
+        <view class="medio">
+          {{item.source}}
+        </view>
+        </navigator>
+        <!---媒体end--->
+          </view>
+      
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!----内容区域end------>
+
+
+
+<!----遮罩区start------>
+
+<!--关闭按钮start--->
+<view id="zhezhao"  wx:if="{{isShowpindao}}">
+  <view class="close" bindtap="hidepindao">
+    <image src="../image/close2.png" style="width:42rpx;height:44rpx"></image>
+  </view>
+<!--关闭按钮end--->
+
+<!--我的频道start--->
+<view class="mine-channels">
+  <view class="title">
+    <text class="b-title">我的频道</text>
+    <text class="s-title">选中不放可以拖曳排序</text>
+  </view>
+
+  <view class="channels">
+    <view 
+    bindtap="clickremovechannel" 
+    wx:for="{{channels}}" class="item"
+    data-id="{{item.id}}"
+    data-index="{{index}}"
+    >{{item.name}} 
+    <image src="../image/close1.png" style="width:30rpx;height:32rpx"></image>
+    
+    </view>
+  
+  </view>
+
+</view>
+
+<!--我的频道end--->
+  
+
+<!--其他频道start--->
+<view class="other-channels">
+  <view class="title">
+    <text class="b-title">其他频道</text>
+     <text class="s-title">点击添加频道</text>
+    
+  </view>
+
+  <view class="channels">
+    <view wx:for="{{otherchannels}}" class="item"> 
+    <image src="../image/add.png" style="width:30rpx;height:32rpx"></image>
+    {{item.name}}
+    </view>
+  
+  </view>
+
+</view>
+
+<!--其他频道end--->
+</view>
+<!----遮罩区end-----

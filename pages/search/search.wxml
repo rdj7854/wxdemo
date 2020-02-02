@@ -1,0 +1,41 @@
+<!--pages/search/search.wxml-->
+
+
+
+<view class="header">
+  <input class="input" auto-focus placeholder="🔍请输入关键字"/>
+  <view class="item">取消</view>
+
+</view>
+
+
+<view class="content1  ">
+   <view class="title ">
+      <view class="item">历史记录</view>
+      <image src="../image/rub.png" style="width:35rpx;height:36rpx"></image>
+    </view>
+
+    <view class="body">
+    <navigator url="../detail/detail">
+      <view  wx:for="{{[1,1,1,1]}}" class="item">周琦发球失误</view>
+    </navigator>
+    </view>
+
+</view>
+
+
+
+
+<view class="content1 ">
+
+  <view class="title ">
+      <view class="item">搜索热词</view>
+    </view>
+
+    <view class="body">
+      <view  wx:for="{{[1,1,1,1]}}" class="item">郭艾伦吃不下饭</view>
+    
+    </view>
+
+</view>
+

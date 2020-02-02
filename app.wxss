@@ -1,0 +1,40 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.bg1{
+  background: #aef;
+}
+.bg2{
+  background: #acc;
+}
+.bg3{
+  background: #aea;
+}
+.bg4{
+  background: red;
+}
+.bg5{
+  background: black;
+}
+.bg6{
+  background: green;
+}
+.bg7{
+  background:  blue;
+}
+.bg8{
+  background:  red;
+}
+.bg9{
+  background:  black;
+}
+.bg10{
+  background:  red;
+}

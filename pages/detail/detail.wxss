@@ -1,0 +1,21 @@
+/* pages/detail/detail.wxss */
+@import "/wxParse/wxParse.wxss";
+.title{
+  padding: 30rpx 20rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.from{
+  padding-left: 20rpx
+}
+.date{
+  font-size: 25rpx;
+  color: #999;
+}
+
+.content{
+  padding: 0 20rpx;
+  padding-top: 30rpx;
+  text-indent: -2em;
+  
+}

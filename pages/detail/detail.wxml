@@ -1,0 +1,18 @@
+<!--pages/detail/detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="title"> 
+  {{title}}  
+</view>
+
+
+<view class="from">
+  <view class="source">  {{source}}</view>
+  <view class="date">{{time}}</view>
+</view>
+
+
+<view class="content">
+
+ <template is="wxParse" data="{{wxParseData:body.nodes}}"/>
+
+</view>
